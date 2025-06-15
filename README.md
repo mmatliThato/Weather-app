@@ -28,5 +28,5 @@ Follow these steps to run the project locally:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/weather-angular-app.git
+git clone https://github.com/mmatliThato/Weather-app.git
 
