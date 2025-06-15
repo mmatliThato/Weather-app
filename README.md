@@ -17,17 +17,9 @@ A modern, responsive weather application built with Angular. Get real-time weath
 
 ---
 
-## 🚀 Demo
 
-🔗 **Live Demo:** [https://your-deployment-link.com](https://your-deployment-link.com)
 
-📸 **Screenshots:**
 
-| Light Mode                        | Dark Mode                         |
-| --------------------------------- | ---------------------------------- |
-| ![Light Mode](screenshot-light.png) | ![Dark Mode](screenshot-dark.png) |
-
----
 
 ## 🛠️ Getting Started
 
@@ -37,4 +29,4 @@ Follow these steps to run the project locally:
 
 ```bash
 git clone https://github.com/your-username/weather-angular-app.git
-c
+

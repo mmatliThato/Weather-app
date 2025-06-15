@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:host {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #f9fafb;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container.dark {
+  background: #121212;
+  color: #eee;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-title {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #2563eb;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.controls button {
+  background: #e0f2fe;
+  border: none;
+  color: #2563eb;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.controls button:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.app-container.dark .controls button {
+  background: #1e3a8a;
+  color: #bfdbfe;
+}
+
+.app-container.dark .controls button:hover {
+  background: #60a5fa;
+  color: #1e3a8a;
+}
+
+/* Search */
+.search-form {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: 2px solid #2563eb;
+  background: #e0f2fe;
+  color: #2563eb;
+}
+
+.search-input:focus {
+  outline: none;
+  background: #bae6fd;
+  border-color: #1d4ed8;
+}
+
+.search-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: #1d4ed8;
+}
+
+
+
+
+.recent-section {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    animation: fadeIn 0.4s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .recent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .recent-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+  }
+  
+  .clear-btn {
+    background-color: transparent;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .clear-btn:hover {
+    background-color: #ef4444;
+    color: #fff;
+  }
+  
+  .recent-section {
+    background: #ffffff;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .app-container.dark .recent-section {
+    background: #1e3a8a;
+    color: #e0e7ff;
+  }
+  
+  /* Header with "Recent Searches" and Clear All */
+  .recent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .recent-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: inherit;
+    margin: 0;
+  }
+  
+  .clear-btn {
+    background: none;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    font-size: 0.875rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .clear-btn:hover {
+    background-color: #ef4444;
+    color: #fff;
+  }
+  
+  .app-container.dark .clear-btn {
+    border-color: #fca5a5;
+    color: #fca5a5;
+  }
+  
+  .app-container.dark .clear-btn:hover {
+    background-color: #fca5a5;
+    color: #1e3a8a;
+  }
+  
+  /* List of recent cities */
+  .recent-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .recent-item {
+    background: linear-gradient(to right, #2563eb, #6366f1);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+  }
+  
+  .recent-item:hover,
+  .recent-item:focus {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+    outline: none;
+  }
+  
+  @media (max-width: 600px) {
+    .recent-list {
+      flex-direction: column;
+    }
+  
+    .recent-item {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .recent-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  
+    .clear-btn {
+      align-self: flex-end;
+    }
+  }
+  
+.status-message {
+  text-align: center;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.loading {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Weather Card */
+.weather-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.app-container.dark .weather-card {
+  background: #1e3a8a;
+  color: #e0e7ff;
+}
+
+.city-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #1e40af;
+}
+
+.description {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  color: #6b7280;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 3rem;
+  font-weight: 600;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.value {
+  font-size: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

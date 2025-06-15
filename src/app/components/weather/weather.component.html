@@ -1,0 +1,80 @@
+<main class="app-container" [class.dark]="isDarkMode" aria-label="Weather Application">
+    <header class="app-header">
+      <h1 class="app-title">Weather</h1>
+      <div class="controls">
+        <button (click)="toggleUnits()" aria-label="Toggle °C/°F">°{{ isMetric ? 'F' : 'C' }}</button>
+        <button (click)="toggleTheme()" aria-label="Toggle Light/Dark Mode">
+          <span *ngIf="isDarkMode">☀️</span>
+          <span *ngIf="!isDarkMode">🌙</span>
+        </button>
+        <button (click)="getLocationWeather()" aria-label="Get Location Weather">📍</button>
+      </div>
+    </header>
+  
+    <section class="search-section">
+      <form (ngSubmit)="fetchWeather()" class="search-form">
+        <input
+          [(ngModel)]="city"
+          name="city"
+          type="text"
+          placeholder="Search for city"
+          required
+          autocomplete="off"
+          class="search-input"
+        />
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </section>
+
+    
+
+
+    <section *ngIf="recentCities.length" class="recent-section">
+        <div class="recent-header">
+          <h3 class="recent-title">Recent Searches</h3>
+          <button class="clear-btn" (click)="clearRecent()">Clear All</button>
+        </div>
+        <ul class="recent-list">
+          <li
+            *ngFor="let recent of recentCities"
+            class="recent-item"
+            (click)="searchRecent(recent)"
+            tabindex="0"
+          >
+            {{ recent }}
+          </li>
+        </ul>
+      </section>
+      
+      
+      
+  
+    <section *ngIf="loading" class="status-message loading">Loading...</section>
+    <section *ngIf="error" class="status-message error">{{ error }}</section>
+  
+    <section *ngIf="weatherData" class="weather-card" aria-live="polite">
+      <h2 class="city-name">{{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
+      <div class="temperature">{{ weatherData.main.temp | number: '1.0-0' }}°{{ isMetric ? 'C' : 'F' }}</div>
+      <p class="description">{{ weatherData.weather[0].description }}</p>
+  
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="label">Feels Like</span>
+          <span class="value">{{ weatherData.main.feels_like | number: '1.0-0' }}°</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Humidity</span>
+          <span class="value">{{ weatherData.main.humidity }}%</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Sunrise</span>
+          <span class="value">{{ weatherData.sys.sunrise * 1000 | date: 'shortTime' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Sunset</span>
+          <span class="value">{{ weatherData.sys.sunset * 1000 | date: 'shortTime' }}</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  
